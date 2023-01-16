@@ -49,11 +49,8 @@ clean:
 	rm -f src/*.o
 	rm -f src/flags/*.o
 	rm -f src/puts/*.o
-	rm -f *gcda
-	rm -f *gcno
 
 fclean: clean
 	rm -f $(NAME)
-	rm -f test
 
 re:	fclean all

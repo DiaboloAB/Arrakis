@@ -24,7 +24,7 @@
         char *c;
         int (*dir)(struct params_s *, va_list);
     };
-    
+
     typedef union {
         float f;
         struct {
