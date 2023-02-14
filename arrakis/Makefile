@@ -29,7 +29,7 @@ $(NAME):	$(OBJ)
 
 clean:
 	make clean -C arrakis_printf
-	rm -f src/*.o
+	find . -type f -name "*.o" -delete
 
 fclean: clean
 	make fclean -C arrakis_printf

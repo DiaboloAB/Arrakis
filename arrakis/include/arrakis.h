@@ -13,7 +13,7 @@
 
     int a_pow(int a, int b);
     void *a_memset(void *pointer, int value, size_t count);
-    
+
     #define CHR(a) (a != ' ')
     #define SEP(a) (a == ' ')
     char **a_mkstw(char *str);

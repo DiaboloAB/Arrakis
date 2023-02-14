@@ -46,10 +46,7 @@ $(NAME):	$(OBJ)
 	cp $(NAME) ../../
 
 clean:
-	@rm -f src/basics/*.o
-	@rm -f src/*.o
-	@rm -f src/flags/*.o
-	@rm -f src/puts/*.o
+	@find . -type f -name "*.o" -delete
 
 fclean: clean
 	@rm -f $(NAME)
