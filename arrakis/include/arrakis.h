@@ -23,5 +23,6 @@
     int a_putstr(int fd, char *str);
     char *a_strdup(char const *src);
     void a_concatstr(char *dest, char *str_1, char *str_2);
+    int a_strncmp(char const *s1, char const *s2, int n);
 
 #endif
