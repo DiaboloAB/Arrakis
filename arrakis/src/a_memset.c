@@ -5,11 +5,12 @@
 ** a memset
 */
 
-#include "include.h"
+#include "arrakis.h"
 
-void *memset(void *pointer, int value, size_t count)
+void *a_memset(void *pointer, int value, size_t count)
 {
-    for (int i = 0; i < count; pointer++) {
-        pointer = value;
+    int *my_pointer = pointer;
+    for (int i = 0; i < count; my_pointer++) {
+        *my_pointer = value;
     }
 }

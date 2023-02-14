@@ -5,18 +5,16 @@
 ** str
 */
 
-#include "mysh.h"
-#define CHR(a) (a != ' ')
-#define SEP(a) (a == ' ')
+#include "arrakis.h"
 
-void free_stw(char **stw)
+void a_freestw(char **stw)
 {
     for (int i = 0; stw[i] != NULL; i++)
         free(stw[i]);
     free(stw);
 }
 
-int count_word(char *str)
+static int count_word(char *str)
 {
     int nb = 0;
     for (int i = 0; str[i] != 0; i++) {
@@ -28,7 +26,7 @@ int count_word(char *str)
     return nb;
 }
 
-int add_word(char *str, int i, char **stw, int word)
+static int add_word(char *str, int i, char **stw, int word)
 {
     int ltr = 0;
     int j = i;
@@ -43,7 +41,7 @@ int add_word(char *str, int i, char **stw, int word)
     return ltr;
 }
 
-char **str_to_words(char *str)
+char **a_mkstw(char *str)
 {
     int nb = count_word(str);
     int i = 0;

@@ -5,6 +5,7 @@
 ** arrakis
 */
 
-#ifndef _INCLUDE__
-    #define _INCLUDE__
+#ifndef _INCLUDE_H__
+    #define _INCLUDE_H__
+
 #endif

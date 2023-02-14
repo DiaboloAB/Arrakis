@@ -42,15 +42,17 @@ CFLAGS	=	-Iinclude/
 all:	$(NAME)
 
 $(NAME):	$(OBJ)
-	ar rc $(NAME) $(OBJ)
+	@ar rc $(NAME) $(OBJ)
+	cp $(NAME) ../../
 
 clean:
-	rm -f src/basics/*.o
-	rm -f src/*.o
-	rm -f src/flags/*.o
-	rm -f src/puts/*.o
+	@rm -f src/basics/*.o
+	@rm -f src/*.o
+	@rm -f src/flags/*.o
+	@rm -f src/puts/*.o
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
+	@rm -f ../../$(NAME)
 
 re:	fclean all
