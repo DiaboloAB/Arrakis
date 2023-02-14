@@ -18,13 +18,13 @@ NAME	=	libarr.a
 
 CFLAGS	=	-Iinclude/
 
-OBJ	=	$(SRC:.c=.o)
+@OBJ	=	$(SRC:.c=.o)
 
 all:	$(NAME)
 
 $(NAME):	$(OBJ)
-	make -C arrakis_printf
-	ar rc $(NAME) $(OBJ)
+	@make -C arrakis_printf
+	@ar rc $(NAME) $(OBJ)
 	cp $(NAME) ../
 
 clean:

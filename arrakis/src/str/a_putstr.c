@@ -7,7 +7,7 @@
 
 #include "arrakis.h"
 
-int a_putstr(int fd, char const *str)
+int a_putstr(int fd, char *str)
 {
     write(fd, str, a_strlen(str));
     return 0;

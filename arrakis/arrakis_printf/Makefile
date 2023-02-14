@@ -33,7 +33,7 @@ SRC	+=	src/puts/puts01.c \
 		src/puts/puts04.c \
 		src/puts/put_magnitude.c
 
-OBJ	=	$(SRC:.c=.o)
+@OBJ	=	$(SRC:.c=.o)
 
 NAME	=	libap.a
 

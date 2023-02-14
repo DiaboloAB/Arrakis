@@ -5,6 +5,8 @@
 ** dup and copy
 */
 
+#include "arrakis.h"
+
 static char *a_strcpy(char *dest, char const *src)
 {
     int i;

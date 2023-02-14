@@ -20,7 +20,7 @@
     void a_freestw(char **stw);
 
     int a_strlen(char *str);
-    int a_putstr(int fd, char const *str);
+    int a_putstr(int fd, char *str);
     char *a_strdup(char const *src);
 
 #endif
