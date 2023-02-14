@@ -19,27 +19,22 @@ NAME	=	libarr.a
 
 CFLAGS	=	-Iinclude/
 
-@OBJ	=	$(SRC:.c=.o)
-
-.SILENT: clean fclean all
+OBJ	=	$(SRC:.c=.o)
 
 all:	$(NAME)
 
 $(NAME):	$(OBJ)
-	@make -C arrakis_printf
-	@ar rc $(NAME) $(OBJ)
-	@cp $(NAME) ../
-	@echo "\e[32marrakis compilation completed\e[0m"
+	make -C arrakis_printf
+	ar rc $(NAME) $(OBJ)
+	cp $(NAME) ../
 
 clean:
-	@make clean -C arrakis_printf
-	@find . -type f -name "*.o" -delete
-	@echo "\e[32marrakis cleaned\e[0m"
+	make clean -C arrakis_printf
+	find . -type f -name "*.o" -delete
 
 fclean: clean
-	@make fclean -C arrakis_printf
-	@rm -f $(NAME)
-	@rm -f ../$(NAME)
-	@echo "\e[32marrakis fully cleaned\e[0m"
+	make fclean -C arrakis_printf
+	rm -f $(NAME)
+	rm -f ../$(NAME)
 
 re:	fclean all

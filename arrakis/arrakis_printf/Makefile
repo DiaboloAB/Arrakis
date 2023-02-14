@@ -33,7 +33,7 @@ SRC	+=	src/puts/puts01.c \
 		src/puts/puts04.c \
 		src/puts/put_magnitude.c
 
-@OBJ	=	$(SRC:.c=.o)
+OBJ	=	$(SRC:.c=.o)
 
 NAME	=	libap.a
 
@@ -42,14 +42,14 @@ CFLAGS	=	-Iinclude/
 all:	$(NAME)
 
 $(NAME):	$(OBJ)
-	@ar rc $(NAME) $(OBJ)
+	ar rc $(NAME) $(OBJ)
 	cp $(NAME) ../../
 
 clean:
-	@find . -type f -name "*.o" -delete
+	find . -type f -name "*.o" -delete
 
 fclean: clean
-	@rm -f $(NAME)
-	@rm -f ../../$(NAME)
+	rm -f $(NAME)
+	rm -f ../../$(NAME)
 
 re:	fclean all
