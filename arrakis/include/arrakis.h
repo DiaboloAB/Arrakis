@@ -22,5 +22,6 @@
     int a_strlen(char *str);
     int a_putstr(int fd, char *str);
     char *a_strdup(char const *src);
+    void a_concatstr(char *dest, char *str_1, char *str_2);
 
 #endif
