@@ -16,5 +16,5 @@ void a_concatstr(char *dest, char *str_1, char *str_2)
     for (int j = 0; str_1[j]; j++)
         dest[i++] = str_1[j];
     for (int j = 0; str_2[j]; j++)
-        dest[i++] = str_1[j];
+        dest[i++] = str_2[j];
 }
