@@ -16,7 +16,7 @@
 
     #define CHR(a) (a != ' ')
     #define SEP(a) (a == ' ')
-    char **a_mkstw(char *str);
+    char **a_mkstw(char *str, char a);
     void a_freestw(char **stw);
 
     int a_strlen(char *str);

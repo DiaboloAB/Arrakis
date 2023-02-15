@@ -14,44 +14,42 @@ void a_freestw(char **stw)
     free(stw);
 }
 
-static int count_word(char *str)
+static int count_word(char *str, char a)
 {
     int nb = 0;
-    for (int i = 0; str[i] != 0; i++) {
-        if (CHR(str[i]) && (SEP(str[i + 1]) || str[i + 1] == 0))
+    for (int i = 0; str[i] != 0; i++)
+        if (str[i] != a && (str[i + 1] == a || str[i + 1] == 0))
             nb++;
-        if (!CHR(str[i]) && !SEP(str[i]))
-            return -1;
-    }
     return nb;
 }
 
-static int add_word(char *str, int i, char **stw, int word)
+static int add_word(char *str, char **stw, int word, char a)
 {
     int ltr = 0;
-    int j = i;
-    for (; CHR(str[j]); ltr++, j++);
-    j = i;
+    int j = 0;
+
+    for (; str[j] != a; ltr++, j++);
+    j = 0;
     stw[word] = malloc(sizeof(char) * (ltr + 1));
     for (int k = 0; k < ltr + 1; k++)
         stw[word][k] = '\0';
-    for (int k = 0; CHR(str[j]); j++, k++)
+    for (int k = 0; str[j] != a; j++, k++)
         stw[word][k] = str[j];
-    for (;SEP(str[j]) && str[j] != '\0'; j++, ltr++);
+    for (;str[j] == a && str[j] != '\0'; j++, ltr++);
     return ltr;
 }
 
-char **a_mkstw(char *str)
+char **a_mkstw(char *str, char a)
 {
-    int nb = count_word(str);
+    int nb = count_word(str, a);
     int i = 0;
     char **stw = malloc(sizeof(char *) * (nb + 1));
     if (nb == -1)
         return NULL;
-    while (SEP(str[i]))
+    while (str[i] == a)
         i++;
     for (int word = 0; word < nb; word++)
-        i += add_word(str, i, stw, word);
+        i += add_word(str + i, stw, word, a);
     stw[nb] = NULL;
     return stw;
 }
