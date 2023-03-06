@@ -9,9 +9,8 @@
 
 void *a_memset(void *pointer, int value, size_t count)
 {
-    int *my_pointer = pointer;
+    int *my_pointer = (int *)pointer;
 
-    for (int i = 0; i < count; my_pointer++) {
+    for (int i = 0; i < count; pointer++, i++)
         *my_pointer = value;
-    }
 }

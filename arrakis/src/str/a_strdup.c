@@ -10,7 +10,7 @@
 static char *a_strcpy(char *dest, char const *src)
 {
     int i;
-    for (i = 0; src[i] != '\0'; i++)
+    for (i = 0; src[i]; i++)
         dest[i] = src[i];
     dest[i] = '\0';
     return dest;
@@ -18,11 +18,12 @@ static char *a_strcpy(char *dest, char const *src)
 
 char *a_strdup(char const *src)
 {
-    int size = 0;
+    int len = 0;
 
-    for (int i = 0; src[i] != '\0'; i++)
-        size++;
-    char *duped = malloc(sizeof(char) * size);
+    for (; src[len]; len++);
+    char *duped = malloc(sizeof(char) * (len + 1));
+    for (int i = 0; i < len + 1; i++)
+        duped[i] = '\0';
     a_strcpy(duped, src);
     return duped;
 }

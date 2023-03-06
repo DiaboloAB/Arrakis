@@ -7,15 +7,15 @@
 
 #include "arrakis.h"
 
-void a_concatstr(char *dest, char *str_1, char *str_2)
+char *a_strcat(char *dest, char const *src)
 {
-    int len = a_strlen(str_1) + a_strlen(str_2);
-    int i = 0;
+    int size = 0;
+    int j = 0;
 
-    dest = malloc(sizeof(char) * len + 1);
-    a_memset(dest, 0, len);
-    for (int j = 0; str_1[j]; j++)
-        dest[i++] = str_1[j];
-    for (int j = 0; str_2[j]; j++)
-        dest[i++] = str_2[j];
+    for (int i = 0; dest[i] != '\0'; i++)
+        size++;
+    for (j = 0; src[j] != '\0'; j++)
+        dest[size + j] = src[j];
+    dest[size + j] = '\0';
+    return dest;
 }
