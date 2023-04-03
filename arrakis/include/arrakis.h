@@ -20,7 +20,7 @@
     int a_strlen(char *str);
     int a_putstr(int fd, char *str);
     char *a_strdup(char const *src);
-    char *a_strcat(char *dest, char const *src);
+    char *a_strcat(char *dest, char const *str, size_t len);
     int a_strncmp(char const *s1, char const *s2, int n);
     int a_strcmp(char const *str_1, char const *str_2);
 
